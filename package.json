@@ -1,0 +1,43 @@
+{
+  "name": "atcocif",
+  "version": "0.1.0",
+  "description": "Parses ATCO-CIF files",
+  "main": "dist/atcocif.js",
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "postpublish": "gh-pages -d doc",
+    "build": "concurrently --names \"dist,docs\" --prefix \"[{name}]\" \"babel src --out-dir dist\" \"docma --src src --dest doc\"",
+    "test": "concurrently --names \"jest,eslint,flow\" --prefix \"[{name}]\" \"jest\" \"eslint src/\" \"flow check\"",
+    "watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnorthwood/node-atcocif.git"
+  },
+  "author": "Chris Northwood <chris@pling.org.uk>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cnorthwood/node-atcocif/issues"
+  },
+  "homepage": "https://github.com/cnorthwood/node-atcocif#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.5.2",
+    "concurrently": "^3.4.0",
+    "docma": "^1.5.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.3.0",
+    "flow-bin": "^0.48.0",
+    "flow-typed": "^2.1.2",
+    "gh-pages": "^1.0.0",
+    "jest-cli": "^20.0.4",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "byline": "^5.0.0"
+  }
+}
