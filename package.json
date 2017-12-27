@@ -6,20 +6,20 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "postpublish": "gh-pages -d doc",
-    "build": "concurrently --names \"dist,docs\" --prefix \"[{name}]\" \"babel src --out-dir dist\" \"docma --src src --dest doc\"",
+    "build": "concurrently --names \"dist,docs\" --prefix \"[{name}]\" \"babel src --out-dir dist\" \"docma --src README.md --src dist/atcocif.js --dest doc\"",
     "test": "concurrently --names \"jest,eslint,flow\" --prefix \"[{name}]\" \"jest\" \"eslint src/\" \"flow check\"",
     "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cnorthwood/node-atcocif.git"
+    "url": "git+https://github.com/ManchesterIO/node-atcocif.git"
   },
   "author": "Chris Northwood <chris@pling.org.uk>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cnorthwood/node-atcocif/issues"
+    "url": "https://github.com/ManchesterIO/node-atcocif/issues"
   },
-  "homepage": "https://github.com/cnorthwood/node-atcocif#readme",
+  "homepage": "https://github.com/ManchesterIO/node-atcocif#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
